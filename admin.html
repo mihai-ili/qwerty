@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Админ — ФильмиЩЕ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page" data-admin>
+      <header class="header">
+        <div class="logo">
+          <a href="index.html"><span>Фильми</span><span>ЩЕ</span></a>
+        </div>
+        <nav class="nav" data-nav>
+          <a href="index.html">Главная</a>
+          <a href="login.html">Вход</a>
+          <a class="nav-primary" href="register.html">Регистрация</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Карточка</h2>
+            <span class="panel-subtitle">Создание / редактирование (только для админа)</span>
+          </div>
+
+          <p class="form-error" data-error></p>
+          <p class="form-success" data-ok></p>
+
+          <form class="form" data-admin-form>
+            <input type="hidden" name="movieId" value="" />
+            <div>
+              <label for="type">Тип</label>
+              <select id="type" name="type" required>
+                <option value="movie">Фильм</option>
+                <option value="series">Сериал</option>
+              </select>
+            </div>
+            <div>
+              <label for="name">Название</label>
+              <input id="name" name="name" required />
+            </div>
+            <div>
+              <label for="smalldescription">Краткое описание</label>
+              <input id="smalldescription" name="smalldescription" maxlength="150" required />
+            </div>
+            <div>
+              <label for="description">Полное описание</label>
+              <textarea id="description" name="description" rows="5" maxlength="1500" required></textarea>
+            </div>
+            <div>
+              <label for="rating">Рейтинг (0–10)</label>
+              <input id="rating" name="rating" required placeholder="Например, 8.5" />
+            </div>
+            <div>
+              <label for="photo">Фото (постер)</label>
+              <input id="photo" name="photo" type="file" accept="image/*" />
+              <span class="panel-subtitle">Фото загрузится в Supabase Storage и будет видно всем.</span>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn-primary" type="submit" data-admin-save>Сохранить</button>
+              <button class="btn btn-ghost" type="button" data-admin-cancel hidden>Отмена</button>
+              <button class="btn btn-ghost" type="button" data-admin-import>Импорт из data/movies.json</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel" style="margin-top: 18px;">
+          <div class="panel-header">
+            <h2>Все карточки</h2>
+            <span class="panel-subtitle">Редактируйте или удаляйте карточки.</span>
+          </div>
+          <div data-admin-list class="empty">Загрузка…</div>
+        </section>
+      </main>
+
+      <footer class="footer">© <span data-year></span> ФильмиЩЕ</footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
+

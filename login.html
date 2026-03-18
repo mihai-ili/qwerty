@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Вход — ФильмиЩЕ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="logo">
+          <a href="index.html"><span>Фильми</span><span>ЩЕ</span></a>
+        </div>
+        <nav class="nav" data-nav>
+          <a href="index.html">Главная</a>
+          <a href="login.html">Вход</a>
+          <a class="nav-primary" href="register.html">Регистрация</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Вход</h2>
+            <span class="panel-subtitle">Войдите, чтобы оставлять отзывы</span>
+          </div>
+
+          <p class="form-error" data-error></p>
+
+          <form class="form" data-login-form>
+            <div>
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+            <div>
+              <label for="password">Пароль</label>
+              <input id="password" name="password" type="password" required />
+            </div>
+            <button class="btn btn-primary" type="submit">Войти</button>
+          </form>
+        </section>
+      </main>
+
+      <footer class="footer">© <span data-year></span> ФильмиЩЕ</footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
+

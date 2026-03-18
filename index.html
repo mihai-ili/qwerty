@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>ФильмиЩЕ — обзоры фильмов и сериалов</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="logo"><span>Фильми</span><span>ЩЕ</span></div>
+        <nav class="nav" data-nav>
+          <a href="index.html">Главная</a>
+          <a href="login.html">Вход</a>
+          <a class="nav-primary" href="register.html">Регистрация</a>
+        </nav>
+      </header>
+
+      <main class="content">
+        <section class="hero">
+          <div>
+            <h1>Честные обзоры фильмов и сериалов</h1>
+            <p>Рейтинг, краткое описание и отзывы зрителей — всё на одном сайте.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#catalog">Смотреть обзоры</a>
+              <a class="btn btn-ghost" href="register.html">Зарегистрироваться</a>
+            </div>
+          </div>
+          <div class="stats">
+            <div class="stat-card">
+              <div class="stat-label">Фильмы и сериалы</div>
+              <div class="stat-value" data-stat-movies>0</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Отзывы</div>
+              <div class="stat-value" data-stat-reviews>0</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Пользователи</div>
+              <div class="stat-value" data-stat-users>—</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" id="catalog">
+          <div class="panel-header">
+            <h2>Каталог обзоров</h2>
+            <span class="panel-subtitle">Кликните по карточке, чтобы открыть полный обзор и отзывы.</span>
+          </div>
+          <div class="grid" data-grid></div>
+        </section>
+      </main>
+
+      <footer class="footer">© <span data-year></span> ФильмиЩЕ</footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
+
